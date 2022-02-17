@@ -1,0 +1,22 @@
+package inputoutput;
+import java.util.Scanner;
+
+public class InputOutput {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter Name: ");
+        String Name = input.next();
+        System.out.print("Enter Course: ");
+        String Course = input.next();
+        System.out.print("Enter Score: ");
+        float Score = input.nextFloat();
+        System.out.print("Enter Grade: ");
+        int Grade = input.nextInt();
+
+        System.out.print(Name + ", a" + Course + " student got a raw score of " + Score + " equivalent to " + Grade + " percent of final grade.");
+    }
+
+}
