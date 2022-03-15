@@ -1,4 +1,6 @@
 
+//With if else statement 
+
 package employee;
 import java.util.Scanner;
 
