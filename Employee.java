@@ -9,30 +9,37 @@ public class Employee {
     
     public void getInfo(){
         System.out.println("Enter employee Name: ");
-        name = input.next();
+        name = input.nextLine();
         System.out.println("Enter emplyee ID: ");
-        idNo = input.next();
+        idNo = input.nextLine();
     }
 
     public static void main(String[] args) {
-        PartTime PartTime = new PartTime();
-        Regular Regular = new Regular();
-
-        Regular.getInfo();
-        System.out.print(Regular.idNo + " " + Regular.name + " Regular " + "350/hr");
-        System.out.print("\nDaily Salary = " + Regular.DailySalary + "\r\n");
-
-        PartTime.getInfo();
-        System.out.print(PartTime.idNo + " " + PartTime.name + " PartTime " + "280/hr");
-        System.out.print("\nDaily Salary = " + PartTime.DailySalary + " \r\n");
+        Scanner input = new Scanner(System.in);
+        PartTime PT = new PartTime();
+        Regular REG = new Regular();
+        
+       int emp;
+        
+        System.out.println("Type 1 for Regular or 2 for PartTime");
+        emp = input.nextInt();
+        
+        if(emp == 1){
+            REG.getInfo();
+            System.out.print(REG.idNo + " " + REG.name + " Regular " + "350/hr");
+            System.out.print("\nDaily Salary = " + REG.DailySalary + "\r\n");
+        }else if(emp == 2){
+            PT.getInfo();
+            System.out.print(PT.idNo + " " + PT.name + " PartTime " + "280/hr");
+            System.out.print("\nDaily Salary = " + PT.DailySalary + " \r\n");
     }
 }
 
-class PartTime extends Employee{
+static class PartTime extends Employee{
     int Rate = 280;
     int DailySalary = Rate * 8;
 }
-class Regular extends Employee{
+static class Regular extends Employee{
     int Rate = 350;
     int DailySalary = Rate * 8 + 500;
 }
